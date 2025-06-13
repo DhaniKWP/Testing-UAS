@@ -4,6 +4,20 @@
         let currentDiscount = 0;
         let appliedPromoCode = '';
 
+        const promoCodes = {
+          'SHOPEE1111': { discount: 5, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 5%'},
+          'SHOPEE1212': { discount: 10, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 90%'},
+          'TIKTOK1111': { discount: 10, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 10%'},
+          'TIKTOK55': { discount: 15, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 15%'},
+          'LAZADA66': { discount: 25, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 25%'},
+          'LAZADA55': { discount: 10, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 10%'},
+          'EBAY333': { discount: 8, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 8%'},
+          'EBAY6767': { discount: 20, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 20%'},
+          'MURAH99': { discount: 15, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 15%'},
+          'MUMER390': { discount: 10, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 10%'},
+          'DHANI100': { discount: 90, type: 'percentage', description: 'Selamat anda mendapatkan sebesar Diskon 90%'},
+        };
+        
 
         // Mapping metode pembayaran dengan warna
         const paymentMethodColors = {
