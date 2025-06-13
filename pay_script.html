@@ -9,11 +9,14 @@
 <body class="bg-purple-400 from-blue-50 to-indigo-100 min-h-screen py-8">
     <div class="container mx-auto max-w-5xl px-4">
         <!-- Header -->
-        <div class="text-center mb-8">  
-            <h1 class="text-3xl font-bold text-white mb-2">Sistem Pembayaran</h1>
+        <div class="text-center mb-8">
+            <div class="flex justify-center items-center gap-4 mb-2">
+                <img src="images/OpenAI-Logo.png" alt="Logo" class="h-10 w-auto">
+                <h1 class="text-3xl font-bold text-white">Sistem Pembayaran</h1>
+            </div>
             <p class="text-gray-200">Kelola transaksi dan pembayaran dengan mudah</p>
         </div>
-
+        
         <div class="grid lg:grid-cols-2 gap-8">
             <!-- Form Pembayaran -->
             <div class="bg-purple-200 rounded-xl shadow-lg p-6">
@@ -66,7 +69,7 @@
                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                             required
                         >
-                            <option value="">Pilih produk...</option>
+                            <option value="">--Pilih produk--</option>
                             <option value="superbesar1" data-price="38850">Super Besar 1 - Rp 38.850</option>
                             <option value="superbesar2" data-price="55500">Super Besar 2 - Rp 55.500</option>
                             <option value="superfamily" data-price="142250">Kombo Super Family - Rp 142.250</option>
@@ -89,7 +92,6 @@
                             <option value="wingercombo" data-price="30000">Kombo Winger - Rp 30.000</option>
                         </select>
                     </div>
-
                     <!-- Jumlah -->
                     <div>
                         <label for="quantity" class="block text-sm font-medium text-gray-700 mb-2">
@@ -105,7 +107,6 @@
                             required
                         >
                     </div>
-
                     <!-- Metode Pembayaran -->
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">
