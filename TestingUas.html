@@ -1,27 +1,46 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Pembayaran Lengkap</title>
+    <link rel="icon" href="images/kfc.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="bg-purple-400 from-blue-50 to-indigo-100 min-h-screen py-8">
+<body class="bg-gradient-to-br from-yellow-500 to-red-600 py-8 dark:from-red-600 dark:to-yellow-500 text-gray-800 dark:text-gray-800">
     <div class="container mx-auto max-w-5xl px-4">
         <!-- Header -->
-        <div class="text-center mb-8">
-            <div class="flex justify-center items-center gap-4 mb-2">
-                <img src="images/OpenAI-Logo.png" alt="Logo" class="h-10 w-auto">
-                <h1 class="text-3xl font-bold text-white">Sistem Pembayaran</h1>
+        <div class="text-center mb-10">
+            <div class="flex justify-center items-center gap-4 mb-4">
+                <div class="bg-white p-2 rounded-full shadow-md">
+                    <img src="images/kfc.png" alt="KFC Logo" class="h-16 w-16 object-contain">
+                </div>
+                <div class="text-left">
+                    <h1 class="text-4xl font-extrabold text-white drop-shadow-sm tracking-wide">KFC Chicken Pay</h1>
+                    <p class="text-sm text-indigo-100 font-medium">Solusi Mudah & Cepat untuk Pembayaran Menu Ayam Favoritmu</p>
+                </div>
             </div>
-            <p class="text-gray-200">Kelola transaksi dan pembayaran dengan mudah</p>
-        </div>
-        
+                <p class="text-base text-purple-100 italic">Nikmati berbagai paket ayam dengan transaksi yang lancar dan aman 🍗</p>
+            </div>
+            <div class="flex justify-end mb-4">
+                <button 
+                id="toggleDarkMode"
+                class="px-5 py-2.5 rounded-xl font-medium transition-all duration-300 ease-in-out 
+                    bg-red-600 text-white 
+                    hover:bg-red-700 
+                    dark:bg-yellow-400 dark:text-gray-900 
+                    dark:hover:bg-yellow-300 
+                    shadow-md dark:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:focus:ring-yellow-500">
+                🌗 Toggle Dark Mode
+                </button>
+            </div>
         <div class="grid lg:grid-cols-2 gap-8">
             <!-- Form Pembayaran -->
-            <div class="bg-purple-200 rounded-xl shadow-lg p-6">
+            <div class="bg-white rounded-xl shadow-lg p-6">
                 <div class="flex items-center mb-6">
-                    <svg class="w-6 h-6 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                     </svg>
                     <h2 class="text-xl font-semibold text-gray-800">Form Pembayaran</h2>
@@ -38,7 +57,7 @@
                             id="customerName"
                             name="customerName"
                             placeholder="Masukkan nama pelanggan"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
                         >
                     </div>
@@ -53,7 +72,7 @@
                             id="customerEmail"
                             name="customerEmail"
                             placeholder="contoh@email.com"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
                         >
                     </div>
@@ -66,7 +85,7 @@
                         <select 
                             id="productSelect"
                             name="product"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
                         >
                             <option value="">--Pilih produk--</option>
@@ -81,17 +100,9 @@
                             <option value="complete3" data-price="92000">Complete Combo 3 - Rp 92.000</option>
                             <option value="complete4" data-price="48500">Complete Combo 4 - Rp 48.500</option>
                             <option value="complete5" data-price="51000">Complete Combo 5 - Rp 51.000</option>
-                            <option value="complete6" data-price="57000">Complete Combo 6 - Rp 57.000</option>
-                            <option value="complete7" data-price="67500">Complete Combo 7 - Rp 67.500</option>
-                            <option value="complete8" data-price="168500">Complete Combo 8 - Rp 168.500</option>
-                            <option value="complete9" data-price="29000">Complete Combo 9 - Rp 29.000</option>
-                            <option value="complete10" data-price="48500">Complete Combo 10 - Rp 48.500</option>
-                            <option value="superstar1" data-price="95500">Kombo Super Star 1 - Rp 95.500</option>
-                            <option value="superstar2" data-price="107000">Kombo Super Star 2 - Rp 107.000</option>
-                            <option value="superstar3" data-price="121000">Kombo Super Star 3 - Rp 121.000</option>
-                            <option value="wingercombo" data-price="30000">Kombo Winger - Rp 30.000</option>
                         </select>
                     </div>
+
                     <!-- Jumlah -->
                     <div>
                         <label for="quantity" class="block text-sm font-medium text-gray-700 mb-2">
@@ -103,36 +114,74 @@
                             name="quantity"
                             min="1"
                             value="1"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
                         >
                     </div>
+
                     <!-- Metode Pembayaran -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            Metode Pembayaran
-                        </label>
-                        <div class="space-y-2">
-                            <label class="flex items-center">
-                                <input type="radio" name="paymentMethod" value="transfer" class="text-purple-600 focus:ring-blue-500">
-                                <span class="ml-2 text-sm text-gray-700">Transfer Bank</span>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Metode Pembayaran
+                    </label>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <!-- Transfer Bank -->
+                            <label class="relative block p-4 rounded-xl border-2 border-transparent bg-blue-50 dark:bg-blue-100 cursor-pointer transition duration-300 peer-checked:border-blue-600 peer-checked:bg-blue-100 dark:peer-checked:bg-blue-200 peer-checked:shadow-xl hover:shadow-md">
+                                <input type="radio" name="paymentMethod" value="transfer" class="absolute top-0 left-0 w-full h-full opacity-0 peer">
+                                <div class="flex items-center gap-3">
+                                <div class="text-blue-600 text-2xl peer-checked:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <span class="text-base font-semibold text-gray-800">Transfer Bank</span>
+                                </div>
+                                <div class="absolute top-2 right-2 hidden peer-checked:block text-blue-600">
+                                <i class="fas fa-check-circle text-xl"></i>
+                                </div>
                             </label>
-                            <label class="flex items-center">
-                                <input type="radio" name="paymentMethod" value="ewallet" class="text-purle-600 focus:ring-blue-500">
-                                <span class="ml-2 text-sm text-gray-700">E-Wallet (OVO, GoPay, Dana)</span>
+
+                            <!-- E-Wallet -->
+                            <label class="relative block p-4 rounded-xl border-2 border-transparent bg-purple-50 dark:bg-purple-100 cursor-pointer transition duration-300 peer-checked:border-purple-600 peer-checked:bg-purple-100 dark:peer-checked:bg-purple-200 peer-checked:shadow-xl hover:shadow-md">
+                                <input type="radio" name="paymentMethod" value="ewallet" class="absolute top-0 left-0 w-full h-full opacity-0 peer">
+                                <div class="flex items-center gap-3">
+                                <div class="text-purple-600 text-2xl peer-checked:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                                <span class="text-base font-semibold text-gray-800">E-Wallet (OVO, GoPay, Dana)</span>
+                                </div>
+                                <div class="absolute top-2 right-2 hidden peer-checked:block text-purple-600">
+                                <i class="fas fa-check-circle text-xl"></i>
+                                </div>
                             </label>
-                            <label class="flex items-center">
-                                <input type="radio" name="paymentMethod" value="credit" class="text-blue-600 focus:ring-blue-500">
-                                <span class="ml-2 text-sm text-gray-700">Kartu Kredit</span>
+
+                            <!-- Kartu Kredit -->
+                            <label class="relative block p-4 rounded-xl border-2 border-transparent bg-orange-50 dark:bg-orange-100 cursor-pointer transition duration-300 peer-checked:border-orange-600 peer-checked:bg-orange-100 dark:peer-checked:bg-orange-200 peer-checked:shadow-xl hover:shadow-md">
+                                <input type="radio" name="paymentMethod" value="credit" class="absolute top-0 left-0 w-full h-full opacity-0 peer">
+                                <div class="flex items-center gap-3">
+                                <div class="text-orange-600 text-2xl peer-checked:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <span class="text-base font-semibold text-gray-800">Kartu Kredit</span>
+                                </div>
+                                <div class="absolute top-2 right-2 hidden peer-checked:block text-orange-600">
+                                <i class="fas fa-check-circle text-xl"></i>
+                                </div>
                             </label>
-                            <label class="flex items-center">
-                                <input type="radio" name="paymentMethod" value="cash" class="text-purple-600 focus:ring-blue-500">
-                                <span class="ml-2 text-sm text-gray-700">Bayar Tunai</span>
+
+                            <!-- Bayar Tunai -->
+                            <label class="relative block p-4 rounded-xl border-2 border-transparent bg-green-50 dark:bg-green-100 cursor-pointer transition duration-300 peer-checked:border-green-600 peer-checked:bg-green-100 dark:peer-checked:bg-green-200 peer-checked:shadow-xl hover:shadow-md">
+                                <input type="radio" name="paymentMethod" value="cash" class="absolute top-0 left-0 w-full h-full opacity-0 peer">
+                                <div class="flex items-center gap-3">
+                                <div class="text-green-600 text-2xl peer-checked:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <span class="text-base font-semibold text-gray-800">Bayar Tunai</span>
+                                </div>
+                                <div class="absolute top-2 right-2 hidden peer-checked:block text-green-600">
+                                <i class="fas fa-check-circle text-xl"></i>
+                                </div>
                             </label>
                         </div>
                     </div>
-
-                    
                     <div>
                         <label for="promoCode" class="block text-sm font-medium text-gray-700 mb-2">
                             Kode Promo (Opsional)
@@ -143,7 +192,7 @@
                                 id="promoCode"
                                 name="promoCode"
                                 placeholder="Masukkan kode promo"
-                                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             >
                             <button 
                                 type="button" 
@@ -175,7 +224,7 @@
                     <!-- Submit Button -->
                     <button 
                         type="submit"
-                        class="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+                        class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
                     >
                         Proses Pembayaran
                     </button>
@@ -183,7 +232,7 @@
             </div>
 
             <!-- Riwayat Transaksi -->
-            <div class="bg-purple-200 rounded-xl shadow-lg p-6">
+            <div class="bg-white rounded-xl shadow-lg p-6">
                 <div class="flex items-center justify-between mb-6">
                     <div class="flex items-center">
                         <svg class="w-6 h-6 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -201,11 +250,11 @@
 
                 <!-- Statistics -->
                 <div class="grid grid-cols-3 gap-4 mb-6">
-                    <div class="text-center p-3 bg-purple-50 rounded-lg">
+                    <div class="text-center p-3 bg-blue-50 rounded-lg">
                         <div class="text-l font-bold text-blue-600" id="totalTransactions">0</div>
                         <div class="text-sm text-gray-600">Transaksi</div>
                     </div>
-                    <div class="text-center p-3 bg-purple-50 rounded-lg">
+                    <div class="text-center p-3 bg-green-50 rounded-lg">
                         <div class="text-l font-bold text-green-600" id="totalRevenue">Rp 0</div>
                         <div class="text-sm text-gray-600">Pendapatan</div>
                     </div>
@@ -219,7 +268,7 @@
                 <div id="transactionList" class="space-y-3 max-h-96 overflow-y-auto">
                     <!-- Empty State -->
                     <div id="emptyState" class="text-center py-8 text-gray-500">
-                        <svg class="w-16 h-16 mx-auto mb-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         <p class="font-medium">Belum ada transaksi</p>
@@ -249,7 +298,7 @@
             
             <button 
                 id="closeModalBtn"
-                class="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-200"
+                class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
             >
                 Tutup
             </button>
@@ -275,7 +324,6 @@
             </div>
         </div>
     </template>
-
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
